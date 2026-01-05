@@ -613,9 +613,23 @@ document.getElementById('steps').innerHTML = data.steps.map((s, idx) => {
         claimBtn.onclick = null;
     }
 
-    document.getElementById('startBtn').onclick = () => {
+ /*   document.getElementById('startBtn').onclick = () => {
         if(data.offerUrl) window.open(data.offerUrl, '_blank');
-    };
+    }; */
+        
+// NEW WEBVIEW-FRIENDLY LOGIC:
+const startBtn = document.getElementById('startBtn');
+startBtn.onclick = (e) => {
+    e.preventDefault();
+    if (data.offerUrl) {
+        // Using location.href is much more compatible with Webview apps
+        // than window.open('_blank')
+        window.location.href = data.offerUrl;
+    } else {
+        alert("Offer link not available yet!");
+    }
+};
+        
 
     // 4. Steps List Logic (Handles Image vs Emoji in steps)
     const stepsContainer = document.getElementById('steps');
