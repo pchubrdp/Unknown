@@ -613,11 +613,11 @@ document.getElementById('steps').innerHTML = data.steps.map((s, idx) => {
         claimBtn.onclick = null;
     }
 
- /*   document.getElementById('startBtn').onclick = () => {
+    document.getElementById('startBtn').onclick = () => {
         if(data.offerUrl) window.open(data.offerUrl, '_blank');
-    }; */
+    }; 
         
-// NEW WEBVIEW-FRIENDLY LOGIC:
+/*// NEW WEBVIEW-FRIENDLY LOGIC:
 const startBtn = document.getElementById('startBtn');
 startBtn.onclick = (e) => {
     e.preventDefault();
@@ -629,7 +629,7 @@ startBtn.onclick = (e) => {
         alert("Offer link not available yet!");
     }
 };
-        
+      */  
 
     // 4. Steps List Logic (Handles Image vs Emoji in steps)
     const stepsContainer = document.getElementById('steps');
